@@ -3,35 +3,32 @@
 ## 📌 Overview  
 This project showcases different Python-based OTP generation methods, ranging from basic pseudo-random generators to secure cryptographic and time-based OTPs.
 
----
-
 ## 📜 Methods of OTP Generation
-
 ### **1️⃣ PRNG-Based OTP (Pseudo-Random Number Generation)**
 - **Method**: `random.randint()` / `random.choices()`
 - **Use Case**: Quick OTPs, non-sensitive applications
 - **Who Uses It?**: Small applications, testing environments
 - **Security**: ❌ **Not secure** (predictable with enough samples)
 
-### **2️⃣ Cryptographically Secure OTP
+### **2️⃣ Cryptographically Secure OTP**
 - **Method**: secrets.randbelow(10)
 - **Use Case**: Secure OTPs for sensitive applications
 - **Who Uses It?**: Banks, secure login systems
 - **Security**: ✅ Highly secure
 
-### **3️⃣ Time-Based OTP (TOTP)
+### **3️⃣ Time-Based OTP (TOTP)**
 - **Method**: pyotp.TOTP()
 - **Use Case**: Two-Factor Authentication (2FA)
 - **Who Uses It?**: Google Authenticator, banking apps cybersecurity firms
 - **Security**: ✅ Highly secure
 
-### **4️⃣ Hash-Based OTP (HOTP)
+### **4️⃣ Hash-Based OTP (HOTP)**
 **Method**: hashlib.sha256()
 **Use Case**: OTPs based on secrets and timestamps
 **Who Uses It?**: Secure systems, user authentication
 **Security**: ✅ Secure but slower than TOTP
 
-### **5️⃣ Alphanumeric OTPs
+### **5️⃣ Alphanumeric OTPs**
 - **Method**: random.choices() / secrets.choice()
 - **Use Case**: OTPs with letters & numbers
 - **Who Uses It?**: E-commerce, email verifications
@@ -49,7 +46,6 @@ This project showcases different Python-based OTP generation methods, ranging fr
 
 
 ## 📂 Project Setup
-
 ```sh
     pip install pyotp
     python otp_generator.py
