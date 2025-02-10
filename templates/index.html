@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 OTP Generator</h1>
+        <p>Select an OTP method and click "Generate OTP".</p>
+        <div class="buttons">
+            <button id="otp1" class="otp-button" onclick="selectOTP('otp1')">OTP1 (Random Int)</button>
+            <button id="otp2" class="otp-button" onclick="selectOTP('otp2')">OTP2 (Random Choice)</button>
+            <button id="otp3" class="otp-button" onclick="selectOTP('otp3')">OTP3 (Secure Randbelow)</button>
+            <button id="otp4" class="otp-button" onclick="selectOTP('otp4')">OTP4 (Time-based)</button>
+            <button id="otp5" class="otp-button" onclick="selectOTP('otp5')">OTP5 (Hash-based)</button>
+            <button id="otp6" class="otp-button" onclick="selectOTP('otp6')">OTP6 (Alphanumeric)</button>
+            <button id="otp7" class="otp-button" onclick="selectOTP('otp7')">OTP7 (Secure Alphanumeric)</button>
+        </div>
+        <button class="generate-btn" onclick="generateOTP()">Generate OTP</button>
+        <h2>Generated OTP: <span id="otp-display">----</span></h2>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

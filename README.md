@@ -11,29 +11,30 @@ This project showcases different Python-based OTP generation methods, ranging fr
 - **Security**: ❌ **Not secure** (predictable with enough samples)
 
 ### **2️⃣ Cryptographically Secure OTP**
-- **Method**: secrets.randbelow(10)
+- **Method**: `secrets.randbelow(10)`
 - **Use Case**: Secure OTPs for sensitive applications
 - **Who Uses It?**: Banks, secure login systems
 - **Security**: ✅ Highly secure
 
 ### **3️⃣ Time-Based OTP (TOTP)**
-- **Method**: pyotp.TOTP()
+- **Method**: `pyotp.TOTP()`
 - **Use Case**: Two-Factor Authentication (2FA)
-- **Who Uses It?**: Google Authenticator, banking apps cybersecurity firms
+- **Who Uses It?**: Google Authenticator, banking apps, cybersecurity firms
 - **Security**: ✅ Highly secure
 
-### **4️⃣ Hash-Based OTP (HOTP)**
-**Method**: hashlib.sha256()
-**Use Case**: OTPs based on secrets and timestamps
-**Who Uses It?**: Secure systems, user authentication
-**Security**: ✅ Secure but slower than TOTP
+### **4️⃣ Hash-Based OTP (HOTP-like)**
+- **Method**: `hashlib.sha256()`
+- **Use Case**: OTPs based on secrets and timestamps
+- **Who Uses It?**: Secure systems, user authentication
+- **Security**: ✅ Secure, but slower than TOTP
 
 ### **5️⃣ Alphanumeric OTPs**
-- **Method**: random.choices() / secrets.choice()
+- **Method**: `random.choices()` / `secrets.choice()`
 - **Use Case**: OTPs with letters & numbers
 - **Who Uses It?**: E-commerce, email verifications
-- **Security**: ✅ Secure with secrets, ❌ Not secure with random
+- **Security**: ✅ Secure with `secrets`, ❌ Not secure with `random`
 
+---
 
 ## 🚀 Best OTP Methods & Use Cases  
 | Method                | Security         | Use Case                  | Who Uses It?                       |
@@ -44,12 +45,22 @@ This project showcases different Python-based OTP generation methods, ranging fr
 | `hashlib.sha256()`    | ✅ Secure        | Secure user verification | Security apps                      |
 | `secrets.choice()`    | ✅ Secure        | Alphanumeric OTPs        | E-commerce, websites               |
 
+---
 
 ## 📂 Project Setup
+### **🔹 1. Install Dependencies**
 ```sh
-    pip install pyotp
-    python otp_generator.py
+    pip install -r requirements.txt
 ```
+
+### **🔹 2. Run the Flask Server**
+```sh
+    python app.py
+```
+### **📌 The server will run at http://127.0.0.1:5000/.**
+
+### **🔹 3. Open in Browser**
+Go to: http://127.0.0.1:5000/
 
 ## 📜 Conclusion
 ✅ Best security: pyotp.TOTP() for 2FA
