@@ -3,6 +3,70 @@
 ## 📌 Overview  
 This project showcases different Python-based OTP generation methods, ranging from basic pseudo-random generators to secure cryptographic and time-based OTPs.
 
+## Deployed Link : https://otp-generator-sgmd.onrender.com 
+
+## 📜 How This Website Was Built  
+### **📌 Technologies Used**
+This OTP Generator was built using the following technologies:
+
+|       **Technology**      |                **Purpose**                    |
+|---------------------------|-----------------------------------------------|
+| **Flask**                 | Backend server to handle OTP generation       |
+| **Gunicorn**              | Production-ready WSGI server for hosting      |
+| **PyOTP**                 | Library for time-based OTPs (TOTP)            |
+| **HTML, CSS, JavaScript** | Frontend interface for user interaction       |
+| **Fetch API (JS)**        | Sends POST requests to Flask API to get OTPs  |
+| **Render**                | Deployment platform for hosting the Flask app |
+
+## 📜 How It Was Deployed/hosted on Render  
+Follow these steps to deploy the Flask OTP Generator on **Render**:
+
+### Render (Best Free Option for Flask)
+- ✅ Free & easy to deploy Flask + HTML, CSS, JS
+- ✅ Supports Auto-Deploy from GitHub
+
+### **1. 🚀 Quick Setup** 
+```sh
+    pip install gunicorn
+    echo "web: gunicorn app:app" > Procfile
+```
+
+### **2. Create a `requirements.txt` File**
+Ensure your project has a `requirements.txt` file listing the dependencies:
+```txt
+    flask
+    pyotp
+    gunicorn
+```
+### **3. Add a Procfile (For Deployment) if not present
+Create a file named Procfile in your project root (without any extension) and add:
+```txt
+    web: gunicorn app:app
+```
+Why? gunicorn is a production-ready server for Flask apps.
+
+### **4. Add files to git and Push them to GitHub**
+```sh
+    git add .
+    git commit -m "Initial commit"
+    git push
+```
+### **5. Deploy on Render**
+- 1. Go to [Render](https://render.com) and sign in with GitHub.
+- 2. Click "New Web Service".
+- 3. Select your GitHub repository.
+- 4. Choose Python 3.x as the runtime.
+- 5. In the Build Command, enter:
+```sh
+    pip install -r requirements.txt
+```
+- 6. In the Start Command, enter:
+```sh
+    gunicorn app:app
+```
+- 7. Click Create Web Service and wait for deployment to complete.
+
+
 ## 📜 Methods of OTP Generation
 ### **1️⃣ PRNG-Based OTP (Pseudo-Random Number Generation)**
 - **Method**: `random.randint()` / `random.choices()`
